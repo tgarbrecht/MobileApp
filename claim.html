@@ -41,15 +41,19 @@
             
             try
             {
-                cordova.plugins.email.open({
-                //window.plugin.email.open({
+                //cordova.plugins.email.open({
+                window.plugin.email.open({
                     to: 'tgarbrecht@kelmscott.com',
                     subject: 'Claim Information',
                     body: GetEmailBody(),
                     isHtml: true
+                },
+                function ()
+                {
+                    alert('sent 2');
                 });
 
-                alert('sent');
+                alert('sent 1');
             }
             catch(e)
             {
