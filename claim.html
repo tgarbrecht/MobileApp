@@ -41,7 +41,8 @@
             
             try
             {
-                cordova.plugins.email.open({
+                //cordova.plugins.email.open({
+                window.plugin.email.open({
                     to: 'tgarbrecht@kelmscott.com',
                     subject: 'Claim Information',
                     body: GetEmailBody(),
