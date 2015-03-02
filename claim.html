@@ -42,16 +42,19 @@
             try
             {
                 //cordova.plugins.email.open({
-                window.plugin.email.open({
-                    to: 'tgarbrecht@kelmscott.com',
-                    subject: 'Claim Information',
-                    body: GetEmailBody(),
-                    isHtml: true
-                },
-                function ()
-                {
-                    alert('sent 2');
-                });
+                //window.plugin.email.open({
+                //    to: 'tgarbrecht@kelmscott.com',
+                //    subject: 'Claim Information',
+                //    body: GetEmailBody(),
+                //    isHtml: true
+                //},
+                //function ()
+                //{
+                //    alert('sent 2');
+                //});
+
+
+                window.plugins.EmailComposer.showEmailComposerWithCallback(null, 'Claim Information', GetEmailBody(), ["tgarbrecht@kelmscott.com"], [], [], true, []);
 
                 alert('sent 1');
             }
