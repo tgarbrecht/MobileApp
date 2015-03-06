@@ -56,7 +56,7 @@ body {
 
 .HomeButtons 
 {
-    width:940px;
+    /*width:940px;*/
     margin-top:30px;
     margin-left:auto;
     margin-right:auto;
@@ -74,12 +74,12 @@ body {
 
     .app 
     {
-        background-image:url(../img/backgroundPATTERN_940.jpg);
+        /*background-image:url(../img/backgroundPATTERN_940.jpg);
         background-repeat: repeat-y;
         width:940px;
         margin-left:auto;
         margin-right:auto;
-        padding-top:5px;
+        padding-top:5px;*/
     }
 }
 
