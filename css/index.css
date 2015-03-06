@@ -25,31 +25,19 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
-<<<<<<< HEAD
     /*background-image:url(../img/backgroundPATTERN.jpg);
     background-repeat: repeat-y;*/
     /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);*/
     /*background-image:-webkit-gradient(
-=======
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
->>>>>>> d02deb1b3179af7e14a8fa7cf2de2e534c103477
         linear,
         left top,
         left bottom,
         color-stop(0, #A7A7A7),
         color-stop(0.51, #E4E4E4)
-<<<<<<< HEAD
     );*/
     /*background-attachment:fixed;*/
-=======
-    );
-    background-attachment:fixed;
->>>>>>> d02deb1b3179af7e14a8fa7cf2de2e534c103477
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
@@ -59,7 +47,6 @@ body {
     width:100%;
 }
 
-<<<<<<< HEAD
 .HomeHeader 
 {
     margin-top:30px;
@@ -145,10 +132,6 @@ body {
 
 /* Portrait layout (default) */
 .app2 {
-=======
-/* Portrait layout (default) */
-.app {
->>>>>>> d02deb1b3179af7e14a8fa7cf2de2e534c103477
     /*background:url(../img/logo.png) no-repeat center top;  170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
@@ -163,11 +146,7 @@ body {
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-<<<<<<< HEAD
     .app2 {
-=======
-    .app {
->>>>>>> d02deb1b3179af7e14a8fa7cf2de2e534c103477
         background-position:left center;
         /*padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height */
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
@@ -175,11 +154,7 @@ body {
     }
 }
 
-<<<<<<< HEAD
 /*h1 {
-=======
-h1 {
->>>>>>> d02deb1b3179af7e14a8fa7cf2de2e534c103477
     font-size:24px;
     font-weight:normal;
     margin:0px;
@@ -222,8 +197,4 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
-<<<<<<< HEAD
 }*/
-=======
-}
->>>>>>> d02deb1b3179af7e14a8fa7cf2de2e534c103477
