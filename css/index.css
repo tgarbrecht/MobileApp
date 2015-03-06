@@ -25,29 +25,14 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
-    /*background-image:url(../img/backgroundPATTERN.jpg);
-    background-repeat: repeat-y;*/
-    /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);*/
-    /*background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );*/
-    /*background-attachment:fixed;*/
-
     background: rgb(4,63,165); /* Old browsers */
-background: -moz-linear-gradient(left,  rgb(4,63,165) 0%, rgb(5,170,215) 45%, rgb(5,170,215) 50%, rgb(5,170,215) 55%, rgb(4,63,165) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(4,63,165)), color-stop(45%,rgb(5,170,215)), color-stop(50%,rgb(5,170,215)), color-stop(55%,rgb(5,170,215)), color-stop(100%,rgb(4,63,165))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* IE10+ */
-background: linear-gradient(to right,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#043fa5', endColorstr='#043fa5',GradientType=1 ); /* IE6-9 */
-
+    background: -moz-linear-gradient(left,  rgb(4,63,165) 0%, rgb(5,170,215) 45%, rgb(5,170,215) 50%, rgb(5,170,215) 55%, rgb(4,63,165) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(4,63,165)), color-stop(45%,rgb(5,170,215)), color-stop(50%,rgb(5,170,215)), color-stop(55%,rgb(5,170,215)), color-stop(100%,rgb(4,63,165))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgb(4,63,165) 0%,rgb(5,170,215) 45%,rgb(5,170,215) 50%,rgb(5,170,215) 55%,rgb(4,63,165) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#043fa5', endColorstr='#043fa5',GradientType=1 ); /* IE6-9 */
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
@@ -66,7 +51,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#043fa5', end
 
 .HomeButtons 
 {
-    /*width:940px;*/
     margin-top:30px;
     margin-left:auto;
     margin-right:auto;
@@ -74,45 +58,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#043fa5', end
 }
 
 
-/*Desktop*/
-@media only screen and (min-width: 940px)
-{
-    body 
-    {
-        
-    }
 
-    .app 
-    {
-        /*background-image:url(../img/backgroundPATTERN_940.jpg);
-        background-repeat: repeat-y;
-        width:940px;
-        margin-left:auto;
-        margin-right:auto;
-        padding-top:5px;*/
-
-
-
-    }
-}
-
-/*Tablet*/
-@media only screen and (min-width: 768px) and (max-width: 939px)
-{
-
-}
-
-/*Handheld Land*/
-@media only screen and (min-width: 480px) and (max-width: 767px)
-{
-
-}
-
-/*Handheld Port*/
-@media only screen and (max-width: 479px) 
-{
-
-}
 
 
 

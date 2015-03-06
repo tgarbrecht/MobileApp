@@ -4,152 +4,65 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/kendo.common.css" />
     <link rel="stylesheet" type="text/css" href="css/kendo.default.css" />
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
-    <script>
-        function load() {
-            var permanentStorage = window.localStorage;
-            document.getElementById('ClaimNumber').value = permanentStorage.getItem('Claim_ClaimNumber');
-            document.getElementById('InsuredName').value = permanentStorage.getItem('Claim_InsuredName');
-            document.getElementById('PermanentAddress').value = permanentStorage.getItem('Claim_PermanentAddress');
-            document.getElementById('ContactNumber').value = permanentStorage.getItem('Claim_ContactNumber');
-            document.getElementById('NumberOfAdults').value = permanentStorage.getItem('Claim_NumberOfAdults');
-            document.getElementById('NumberOfChildren').value = permanentStorage.getItem('Claim_NumberOfChildren');
-            document.getElementById('NumberOfPets').value = permanentStorage.getItem('Claim_NumberOfPets');
-            document.getElementById('SpecialConsiderations').value = permanentStorage.getItem('Claim_SpecialConsiderations');
-            document.getElementById('PolicyLimits').value = permanentStorage.getItem('Claim_PolicyLimits');
-            document.getElementById('AdditionalInformation').value = permanentStorage.getItem('Claim_AdditionalInformation');
-        }
-
-        function save_worker()
-        {
-            var permanentStorage = window.localStorage;
-            permanentStorage.setItem('Claim_ClaimNumber', document.getElementById('ClaimNumber').value);
-            permanentStorage.setItem('Claim_InsuredName', document.getElementById('InsuredName').value);
-            permanentStorage.setItem('Claim_PermanentAddress', document.getElementById('PermanentAddress').value);
-            permanentStorage.setItem('Claim_ContactNumber', document.getElementById('ContactNumber').value);
-            permanentStorage.setItem('Claim_NumberOfAdults', document.getElementById('NumberOfAdults').value);
-            permanentStorage.setItem('Claim_NumberOfChildren', document.getElementById('NumberOfChildren').value);
-            permanentStorage.setItem('Claim_NumberOfPets', document.getElementById('NumberOfPets').value);
-            permanentStorage.setItem('Claim_SpecialConsiderations', document.getElementById('SpecialConsiderations').value);
-            permanentStorage.setItem('Claim_PolicyLimits', document.getElementById('PolicyLimits').value);
-            permanentStorage.setItem('Claim_AdditionalInformation', document.getElementById('AdditionalInformation').value);
-        }
-
-        function save()
-        {
-            save_worker();
-            
-            try
-            {
-                window.plugins.EmailComposer.showEmailComposerWithCallback(null, 'Claim Information', GetEmailBody(), ["tgarbrecht@kelmscott.com"], [], [], true, []);
-            }
-            catch(e)
-            {
-                alert('Error Sending Email!');
-            }
-
-            history.back();
-        }
-
-        function clearform()
-        {
-            document.getElementById('ClaimNumber').value = '';
-            document.getElementById('InsuredName').value = '';
-            document.getElementById('PermanentAddress').value = '';
-            document.getElementById('ContactNumber').value = '';
-            document.getElementById('NumberOfAdults').value = '';
-            document.getElementById('NumberOfChildren').value = '';
-            document.getElementById('NumberOfPets').value = '';
-            document.getElementById('SpecialConsiderations').value = '';
-            document.getElementById('PolicyLimits').value = '';
-            document.getElementById('AdditionalInformation').value = '';
-
-            save_worker();
-
-            document.getElementById('ClaimNumber').focus();
-        }
-
-        function GetEmailBody()
-        {
-            var html = '<h1>Claim Information:</h1><br/><br/>';
-
-            html += GetFieldHTML('Name', 'Settings_Name');
-            html += GetFieldHTML('Company', 'Settings_Company');
-            html += GetFieldHTML('Phone', 'Settings_Phone');
-            html += GetFieldHTML('Email', 'Settings_Email');
-            html += GetFieldHTML('ClaimNumber', 'Claim_ClaimNumber');
-            html += GetFieldHTML('InsuredName', 'Claim_InsuredName');
-            html += GetFieldHTML('PermanentAddress', 'Claim_PermanentAddress');
-            html += GetFieldHTML('Claim_ContactNumber', 'Claim_ContactNumber');
-            html += GetFieldHTML('Claim_NumberOfAdults', 'Claim_NumberOfAdults');
-            html += GetFieldHTML('NumberOfChildren', 'Claim_NumberOfChildren');
-            html += GetFieldHTML('NumberOfPets', 'Claim_NumberOfPets');
-            html += GetFieldHTML('SpecialConsiderations', 'Claim_SpecialConsiderations');
-            html += GetFieldHTML('PolicyLimits', 'Claim_PolicyLimits');
-            html += GetFieldHTML('AdditionalInformation', 'Claim_AdditionalInformation');
-
-            return html;
-        }
-
-        function GetFieldHTML(title, id)
-        {
-            var html = "";
-
-            html += '<div><h4>' + title + ':</h4> ' + window.localStorage.getItem(id) + '</div>';
-
-            return html;
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />    
 </head>
-<body onload="load();">
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Claim Number</div>
-        <input type="text" id="ClaimNumber" style="width:240px;" class="k-textbox" />
+<body onload="claim_load();">
+    <div style="padding:20px; margin-top:15px; background-color:white;"> 
+        <div style="text-align:center;">
+            <img src="img/PRIMUSlogo140px.jpg" />
+        </div>  
+        <div style="width:250px; margin-left:auto; margin-right:auto;">
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Claim Number</div>
+                <input type="text" id="ClaimNumber" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Insured Name</div>
+                <input type="text" id="InsuredName" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Permanent Address</div>
+                <input type="text" id="PermanentAddress" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Contact Number</div>
+                <input type="text" id="ContactNumber" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Number of Adults</div>
+                <input type="text" id="NumberOfAdults" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Number of Children</div>
+                <input type="text" id="NumberOfChildren" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Number/Type of Pets</div>
+                <input type="text" id="NumberOfPets" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Special Considerations</div>
+                <input type="text" id="SpecialConsiderations" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Policy Limits</div>
+                <input type="text" id="PolicyLimits" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Estimated Length of Displacement</div>
+                <input type="text" id="EstimatedLengthOfDisplacement" style="width:240px;" class="k-textbox" />
+            </div>
+            <div class="Field" style="width:250px">
+                <div style="width:250px">Additional Information</div>
+                <input type="text" id="AdditionalInformation" style="width:240px;" class="k-textbox" />
+            </div>
+            <br clear="all" />
+            <input type="button" value="Cancel" onclick="history.back();" style="margin-top:10px; margin-right:10px;" class="k-button" />
+            <input type="button" value="Clear" onclick="claim_clearform();" style="margin-top:10px; margin-right:10px;" class="k-button" />
+            <input type="button" value="Submit" onclick="claim_save();" style="margin-top:10px; margin-right:10px;" class="k-button" /> 
+        </div>   
     </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Insured Name</div>
-        <input type="text" id="InsuredName" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Permanent Address</div>
-        <input type="text" id="PermanentAddress" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Contact Number</div>
-        <input type="text" id="ContactNumber" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Number of Adults</div>
-        <input type="text" id="NumberOfAdults" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Number of Children</div>
-        <input type="text" id="NumberOfChildren" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Number/Type of Pets</div>
-        <input type="text" id="NumberOfPets" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Special Considerations</div>
-        <input type="text" id="SpecialConsiderations" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Policy Limits</div>
-        <input type="text" id="PolicyLimits" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Estimated Length of Displacement</div>
-        <input type="text" id="EstimatedLengthOfDisplacement" style="width:240px;" class="k-textbox" />
-    </div>
-    <div class="Field" style="width:250px">
-        <div style="width:250px">Additional Information</div>
-        <input type="text" id="AdditionalInformation" style="width:240px;" class="k-textbox" />
-    </div>
-    <br clear="all" />
-    <input type="button" value="Cancel" onclick="history.back();" style="margin-top:10px; margin-right:10px;" class="k-button" />
-    <input type="button" value="Clear" onclick="clearform();" style="margin-top:10px; margin-right:10px;" class="k-button" />
-    <input type="button" value="Submit" onclick="save();" style="margin-top:10px; margin-right:10px;" class="k-button" />
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>
