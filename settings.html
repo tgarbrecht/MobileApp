@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/kendo.common.css" />
+    <link rel="stylesheet" type="text/css" href="css/kendo.default.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <script>
+        function load()
+        {
+            var permanentStorage = window.localStorage;
+            document.getElementById('Name').value = permanentStorage.getItem('Settings_Name');
+            document.getElementById('Company').value = permanentStorage.getItem('Settings_Company');
+            document.getElementById('Phone').value = permanentStorage.getItem('Settings_Phone');
+            document.getElementById('Email').value = permanentStorage.getItem('Settings_Email');
+            document.getElementById('CallNumber').value = permanentStorage.getItem('Settings_CallNumber');
+        }
+
+        function save()
+        {
+            var permanentStorage = window.localStorage;
+            permanentStorage.setItem('Settings_Name', document.getElementById('Name').value);
+            permanentStorage.setItem('Settings_Company', document.getElementById('Company').value);
+            permanentStorage.setItem('Settings_Phone', document.getElementById('Phone').value);
+            permanentStorage.setItem('Settings_Email', document.getElementById('Email').value);
+            permanentStorage.setItem('Settings_CallNumber', document.getElementById('CallNumber').value);
+            history.back();
+        }
+    </script>
+</head>
+<body onload="load();">
+    <div class="Field" style="width:250px">
+        <div style="width:250px">Name</div>
+        <input type="text" id="Name" style="width:240px;" class="k-textbox" />
+    </div>
+    <div class="Field" style="width:250px">
+        <div style="width:250px">Company</div>
+        <input type="text" id="Company" style="width:240px;" class="k-textbox" />
+    </div>
+    <div class="Field" style="width:250px">
+        <div style="width:250px">Phone</div>
+        <input type="text" id="Phone" style="width:240px;" class="k-textbox" />
+    </div>
+    <div class="Field" style="width:250px">
+        <div style="width:250px">Email</div>
+        <input type="text" id="Email" style="width:240px;" class="k-textbox" />
+    </div> 
+    <div class="Field" style="width:250px">
+        <div style="width:250px">Home Screen Call #</div>
+        <input type="text" id="CallNumber" style="width:240px;" class="k-textbox" />
+    </div>      
+    <br clear="all"/>
+    <input type="button" value="Cancel" onclick="history.back();" style="margin-top:10px; margin-right:10px;" class="k-button" />
+    <input type="button" value="Save" onclick="save();" style="margin-top:10px; margin-right:10px;" class="k-button" />
+</body>
+</html>
