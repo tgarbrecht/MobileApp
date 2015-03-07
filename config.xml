@@ -16,6 +16,9 @@
     <access origin="tel:*" launch-external="yes" />
     <access origin="mailto:*" launch-external="yes" />
 
+    <!-- Default application icon -->
+    <icon src="icon.png" />
+
     <!-- android -->
     <icon src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
     <icon src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
