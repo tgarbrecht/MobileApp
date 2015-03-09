@@ -165,16 +165,16 @@ function GetEmailBody() {
     html += GetFieldHTML('Company', 'Settings_Company');
     html += GetFieldHTML('Phone', 'Settings_Phone');
     html += GetFieldHTML('Email', 'Settings_Email');
-    html += GetFieldHTML('ClaimNumber', 'Claim_ClaimNumber');
-    html += GetFieldHTML('InsuredName', 'Claim_InsuredName');
-    html += GetFieldHTML('PermanentAddress', 'Claim_PermanentAddress');
-    html += GetFieldHTML('Claim_ContactNumber', 'Claim_ContactNumber');
-    html += GetFieldHTML('Claim_NumberOfAdults', 'Claim_NumberOfAdults');
-    html += GetFieldHTML('NumberOfChildren', 'Claim_NumberOfChildren');
-    html += GetFieldHTML('NumberOfPets', 'Claim_NumberOfPets');
-    html += GetFieldHTML('SpecialConsiderations', 'Claim_SpecialConsiderations');
-    html += GetFieldHTML('PolicyLimits', 'Claim_PolicyLimits');
-    html += GetFieldHTML('AdditionalInformation', 'Claim_AdditionalInformation');
+    html += GetFieldHTML('Claim Number', 'Claim_ClaimNumber');
+    html += GetFieldHTML('Insured Name', 'Claim_InsuredName');
+    html += GetFieldHTML('Permanent Address', 'Claim_PermanentAddress');
+    html += GetFieldHTML('Contact Number', 'Claim_ContactNumber');
+    html += GetFieldHTML('Number of Adults', 'Claim_NumberOfAdults');
+    html += GetFieldHTML('Number of Children', 'Claim_NumberOfChildren');
+    html += GetFieldHTML('Number of Pets', 'Claim_NumberOfPets');
+    html += GetFieldHTML('Special Considerations', 'Claim_SpecialConsiderations');
+    html += GetFieldHTML('Policy Limits', 'Claim_PolicyLimits');
+    html += GetFieldHTML('Additional Information', 'Claim_AdditionalInformation');
 
     html += '</div>';
 
@@ -185,7 +185,7 @@ function GetFieldHTML(title, id) {
     var html = "";
 
     html += '<div style="margin-bottom: 15px; font-family:Verdana, Geneva, sans-serif; font-size:12px;">';
-    html += '    <b>' + title + '</b> ' + window.localStorage.getItem(id);
+    html += '    <b>' + title + ':</b> ' + window.localStorage.getItem(id);
     html += '</div>';
 
     return html;
