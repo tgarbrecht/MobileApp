@@ -182,7 +182,7 @@ function GetEmailBody() {
 function GetFieldHTML(title, id) {
     var html = "";
 
-    html += '<div><h4>' + title + ':</h4> ' + window.localStorage.getItem(id) + '</div>';
+    html += '<div><h4>' + title + ':</h4> ' + window.localStorage.getItem(id) + '</div><hr/>';
 
     return html;
 }
