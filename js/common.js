@@ -159,7 +159,7 @@ function claim_clearform() {
 }
 
 function GetEmailBody() {
-    var html = '<h1>Claim Information:</h1><br/><br/>';
+    var html = '<div style="width:400px;"><h1>Claim Information Submitted Via Mobile App:</h1><br/><br/>';
 
     html += GetFieldHTML('Name', 'Settings_Name');
     html += GetFieldHTML('Company', 'Settings_Company');
@@ -176,13 +176,17 @@ function GetEmailBody() {
     html += GetFieldHTML('PolicyLimits', 'Claim_PolicyLimits');
     html += GetFieldHTML('AdditionalInformation', 'Claim_AdditionalInformation');
 
+    html += '</div>';
+
     return html;
 }
 
 function GetFieldHTML(title, id) {
     var html = "";
 
-    html += '<div><h4>' + title + ':</h4> ' + window.localStorage.getItem(id) + '</div><hr/>';
+    html += '<div style="margin-bottom: 15px; font-family:Verdana, Geneva, sans-serif; font-size:12px;">';
+    html += '    <b>' + title + '</b> ' + window.localStorage.getItem(id);
+    html += '</div>';
 
     return html;
 }
