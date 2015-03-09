@@ -17,8 +17,8 @@
  * under the License.
  */
 
-var app_call_number = '847-886-1401';
-var app_email_address = 'tgarbrecht@kelmscott.com';
+var app_call_number = '1-877-412-6222';
+var app_email_address = 'claims@primushousing.com';
 
 
 var app = {
