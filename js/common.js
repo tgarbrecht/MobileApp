@@ -185,7 +185,7 @@ function GetFieldHTML(title, id) {
     var html = "";
 
     html += '<div style="margin-bottom: 15px; font-family:Verdana, Geneva, sans-serif; font-size:12px;">';
-    html += '    <b>' + title + ':</b> ' + window.localStorage.getItem(id);
+    html += '    <span style="font-weight:bold;">' + title + ':</span> ' + window.localStorage.getItem(id);
     html += '</div>';
 
     return html;
