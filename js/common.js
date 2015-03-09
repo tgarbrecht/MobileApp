@@ -75,6 +75,20 @@ function action_settings()
     window.location = 'settings.html';
 }
 
+function RequiredField(value, message)
+{
+    var result = true;
+
+    if (value == '')
+    {
+        alert(message);
+        result = false;
+    }
+
+    return result;
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Claim Form
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -92,7 +106,8 @@ function claim_load() {
     document.getElementById('AdditionalInformation').value = permanentStorage.getItem('Claim_AdditionalInformation');
 }
 
-function claim_save_worker() {
+function claim_save_worker()
+{
     var permanentStorage = window.localStorage;
     permanentStorage.setItem('Claim_ClaimNumber', document.getElementById('ClaimNumber').value);
     permanentStorage.setItem('Claim_InsuredName', document.getElementById('InsuredName').value);
@@ -108,16 +123,22 @@ function claim_save_worker() {
 
 function claim_save()
 {
-    claim_save_worker();
+    if (RequiredField(document.getElementById('InsuredName').value, 'Insured name is required!'))
+    {
+        if (RequiredField(document.getElementById('ContactNumber').value, 'Contact number is required!'))
+        {
+            claim_save_worker();
 
-    try {
-        window.plugins.EmailComposer.showEmailComposerWithCallback(null, 'Claim Information', GetEmailBody(), [app_email_address], [], [], true, []);
-    }
-    catch (e) {
-        alert('Error Sending Email!');
-    }
+            try {
+                window.plugins.EmailComposer.showEmailComposerWithCallback(null, 'Claim Information', GetEmailBody(), [app_email_address], [], [], true, []);
+            }
+            catch (e) {
+                alert('Error Sending Email!');
+            }
 
-    history.back();
+            history.back();
+        }
+    }
 }
 
 function claim_clearform() {
@@ -169,7 +190,8 @@ function GetFieldHTML(title, id) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Settings Form
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-function settings_load() {
+function settings_load()
+{
     var permanentStorage = window.localStorage;
     document.getElementById('Name').value = permanentStorage.getItem('Settings_Name');
     document.getElementById('Company').value = permanentStorage.getItem('Settings_Company');
@@ -177,11 +199,22 @@ function settings_load() {
     document.getElementById('Email').value = permanentStorage.getItem('Settings_Email');
 }
 
-function settings_save() {
-    var permanentStorage = window.localStorage;
-    permanentStorage.setItem('Settings_Name', document.getElementById('Name').value);
-    permanentStorage.setItem('Settings_Company', document.getElementById('Company').value);
-    permanentStorage.setItem('Settings_Phone', document.getElementById('Phone').value);
-    permanentStorage.setItem('Settings_Email', document.getElementById('Email').value);
-    history.back();
+function settings_save()
+{
+    if (RequiredField(document.getElementById('Name').value, 'Name is required!'))
+    {
+        if (RequiredField(document.getElementById('Company').value, 'Company name is required!'))
+        {
+            if (RequiredField(document.getElementById('Phone').value, 'Phone number is required!'))
+            {
+                var permanentStorage = window.localStorage;
+                permanentStorage.setItem('Settings_Name', document.getElementById('Name').value);
+                permanentStorage.setItem('Settings_Company', document.getElementById('Company').value);
+                permanentStorage.setItem('Settings_Phone', document.getElementById('Phone').value);
+                permanentStorage.setItem('Settings_Email', document.getElementById('Email').value);
+                history.back();
+            }
+        }
+    }
 }
+
